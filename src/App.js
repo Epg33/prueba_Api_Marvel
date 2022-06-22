@@ -8,29 +8,27 @@ function App() {
 
   const [resultado, setResultado]=useState('');
 
-  const xd = (nombre)=>{
+  const xd = (nombre, imagen, descripcion)=>{
     setResultado(<div>
       <h1>Que onda perro</h1>
       <h2>el nombre es {nombre}</h2>
-      <ul>
-        <li>a</li>
-        <li>b</li>
-        <li>c</li>
-        <li>d</li>
-        <li>e</li>
-        <li>f</li>
-      </ul>
+      <img src={imagen}></img>
+      <p>Descripcion: {descripcion}</p>
     </div>);
   }
 
   const fetiches  = async () =>{
     let data = {};
     let nombre = '';
+    let imagen= '';
+    let descripcion = '';
     await fetch(`http://gateway.marvel.com/v1/public/characters?nameStartsWith=${buscar}&ts=1&apikey=8647391dcd64fb37aed65587c692cb85&hash=059c9891e0d7109faefe1dc8bfd6d1ff`)
     .then(response=>response.json())
     .then(data_f=>{data = data_f; console.log(data_f);})
     nombre = data.data.results[0].name;
-    xd(nombre)
+    imagen= data.data.results[0].thumbnail.path+'/standard_fantastic.'+data.data.results[0].thumbnail.extension;
+    descripcion = data.data.results[0].description;
+    xd(nombre, imagen, descripcion)
   };
 
   const cambiarNombre = (e) => {
