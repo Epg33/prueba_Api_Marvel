@@ -1,4 +1,106 @@
+html{
+  margin: none;
+  padding: none;
+}
+
+.title{
+  margin: none !important;
+  margin-block-start: none;
+  margin-block-end: none;
+  background-color: transparent !important;
+  text-align: center;
+  font-size: 2rem;
+}
+
 .nav{
   margin-top: none;
-  background-color: rgba(243, 3, 3, 0.936);
+}
+
+.apto{
+  display: flex;
+  justify-content: center;
+}
+
+.search{
+  text-align: center;
+  outline: none;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  border-bottom: 5px solid black;
+  width: 80%;
+  font-size: 2rem;
+}
+
+.description{
+  font-size: 1.6rem;
+  font-weight: 500;
+  margin-bottom: none;
+  padding: 2%;
+  margin-bottom: none;
+}
+
+.character{
+  display: flex;
+  justify-items: flex-start;
+  height: 67.9vh;
+  width: 50vw;
+}
+
+.info{
+  display: grid;
+  grid-template-columns: 2fr 2fr;
+}
+
+i{
+  color: red;
+}
+
+.Titulo{
+  text-align: center;
+  margin: none;
+  font-size: 3rem;
+}
+
+.lainfo{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.nave{
+  background-color: rgba(241, 18, 18, 0.869);
+  height: 10vh;
+  width: 70%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.botonx{
+  border: none;
+  background-color: transparent;
+  color: white;
+  font-size: 1.3rem;
+  width: 100%;
+}
+
+.botonx:hover{
+  background-color: rgba(195, 20, 20, 0.869);
+}
+
+.botonx:active{
+  animation: colores 2s ease-in-out;
+}
+
+@keyframes colores{
+  0%{
+    background-color: rgba(93, 3, 145, 0.869);
+  }
+  50%{
+    background-color: rgba(4, 64, 229, 0.869);
+  }
+  100%{
+    background-color: rgba(241, 18, 18, 0.869);
+  }
 }
