@@ -7,8 +7,7 @@ function Personajes(props) {
 
   const xd = (nombre, imagen, descripcion)=>{
     setResultado(<div>
-      <h1>Search for your Character</h1>
-      <h2>The Name is {nombre}</h2>
+      <h2 className='name'>The Name is {nombre}</h2>
       <div className='info'>
         <p className='description'><h2>Description: </h2>{descripcion}</p>
         <img src={imagen} alt="imagen de muestra del persoaje" className='character'></img>
@@ -21,7 +20,7 @@ function Personajes(props) {
     let nombre = '';
     let imagen= '';
     let descripcion = '';
-    await fetch(`http://gateway.marvel.com/v1/public/characters?nameStartsWith=${buscar}&ts=1&apikey=8647391dcd64fb37aed65587c692cb85&hash=059c9891e0d7109faefe1dc8bfd6d1ff`)
+    await fetch(`http://gateway.marvel.com/v1/public/characters?limit=100&nameStartsWith=${buscar}&ts=1&apikey=8647391dcd64fb37aed65587c692cb85&hash=059c9891e0d7109faefe1dc8bfd6d1ff`)
     .then(response=>response.json())
     .then(data_f=>{data = data_f; console.log(data_f);})
     let datos = data.data.results;
@@ -51,7 +50,7 @@ function Personajes(props) {
     <>
     <div className="App" style={{visibility: props.show}}>
       <nav className='nav'>
-        <h1 className='title' >Your favorite characters</h1>
+        <h2 className='title' >Search For Your Character</h2>
         <div>
           
         </div>
