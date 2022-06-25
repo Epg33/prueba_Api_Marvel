@@ -6,7 +6,7 @@ function Eventos() {
   const cambiarEvento = (title, description, imagen) => {
     setEvento(
       <>
-        <h3>The event is {title}</h3>
+        <h2 className='name'>The event is {title}</h2>
         <div className='info'>
           <p className='description'>Description: {description}</p>
           <img src={imagen}></img>
@@ -20,7 +20,7 @@ function Eventos() {
     let title = '';
     let description = '';
     let imagen = '';
-    await fetch(`http://gateway.marvel.com/v1/public/events?ts=1&apikey=8647391dcd64fb37aed65587c692cb85&hash=059c9891e0d7109faefe1dc8bfd6d1ff`)
+    await fetch(`http://gateway.marvel.com/v1/public/events?nameStartsWith=${evento}&ts=1&apikey=8647391dcd64fb37aed65587c692cb85&hash=059c9891e0d7109faefe1dc8bfd6d1ff`)
     .then(response=>response.json())
     .then(data_f=>{data = data_f; console.log(data_f);
       console.log(data)})

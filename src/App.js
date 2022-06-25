@@ -2,14 +2,10 @@ import React, { useState } from 'react';
 import './App.css';
 import Personajes from './Personajes';
 import Comics from './Comics';
-import Prueba from './Eventos';
 import Eventos from './Eventos';
+import Series from './Series';
 
 function App() {
-  const [viscar, setViscar] = useState('hidden')
-  const [viscom, setViscom] = useState('hidden')
-  const [visven, setVisven] = useState('hidden')
-  const [visstr, setVisstr] = useState('hidden')
   const [content, setContent] = useState(<></>)
 
   const Ver = (e) =>{ 
@@ -19,9 +15,9 @@ function App() {
       case 'Comics':
         setContent(<Comics />); break
       case 'Eventos':
-        setContent(<Eventos/>); break
-      case 'Hitorias':
-        setVisstr('visible'); setViscar('hidden'); setViscom('hidden'); setVisven('hidden'); break
+        setContent(<Eventos />); break
+      case 'Series':
+        setContent(<Series />); break
     }
   };
 
@@ -33,7 +29,7 @@ function App() {
             <button className='botonx' onClick={Ver} value='Personajes'>Personajes</button>
             <button className='botonx' onClick={Ver} value='Comics'>Comics</button>
             <button className='botonx' onClick={Ver} value='Eventos'>Eventos</button>
-            <button className='botonx' onClick={Ver} value='Historias'>Historias</button>
+            <button className='botonx' onClick={Ver} value='Series'>Series</button>
           </nav>
           <div className='contenido'>{content}</div>
         </div>

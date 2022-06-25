@@ -4,11 +4,14 @@ function Comics(props) {
   const [title, setTitle] = useState('');
   const [info, setInfo] = useState('');
 
-  const cambiarNombre = (titlex, imagen) => {
+  const cambiarNombre = (titlex, imagen, precio) => {
     setInfo(
       <>
         <h3>The title is: {titlex}</h3>
-        <img src={imagen}></img>
+        <div className='info'>
+          <img src={imagen} alt='imagen de muestra del comic'></img>
+          <p className='description'>The price is: {precio}</p>
+        </div>
       </>
     )
   }
@@ -21,6 +24,7 @@ function Comics(props) {
     let data = '';
     let titlex = '';
     let imagen = '';
+    let precio = '';
 
     await fetch(`http://gateway.marvel.com/v1/public/comics?limit=100&titleStartsWith=${title}&ts=1&apikey=8647391dcd64fb37aed65587c692cb85&hash=059c9891e0d7109faefe1dc8bfd6d1ff`)
     .then(response=>response.json())
@@ -28,7 +32,8 @@ function Comics(props) {
       console.log(data);})
     titlex = data.data.results[0].title
     imagen = data.data.results[0].thumbnail.path+'/detail.'+data.data.results[0].thumbnail.extension
-    cambiarNombre(titlex, imagen)
+    precio = data.data.results[0].prices[0].price
+    cambiarNombre(titlex, imagen, precio)
     }
   return(
     <>
