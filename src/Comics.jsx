@@ -9,7 +9,7 @@ function Comics(props) {
       <>
         <h3>The title is: {titlex}</h3>
         <div className='info'>
-          <img src={imagen} alt='imagen de muestra del comic'></img>
+          <img src={imagen} className='imagenes' alt='imagen de muestra del comic'></img>
           <p className='description'>The price is: {precio}</p>
         </div>
       </>

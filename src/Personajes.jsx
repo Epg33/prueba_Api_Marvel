@@ -10,7 +10,7 @@ function Personajes(props) {
       <h2 className='name'>The Name is {nombre}</h2>
       <div className='info'>
         <p className='description'><h2>Description: </h2>{descripcion}</p>
-        <img src={imagen} alt="imagen de muestra del persoaje" className='character'></img>
+        <img src={imagen} alt="imagen de muestra del persoaje" className='imagenes'></img>
       </div>
     </div>)
   }

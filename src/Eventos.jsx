@@ -8,8 +8,8 @@ function Eventos() {
       <>
         <h2 className='name'>The event is {title}</h2>
         <div className='info'>
-          <p className='description'>Description: {description}</p>
-          <img src={imagen}></img>
+          <p className='description' id='descevent'>Description: {description}</p>
+          <img src={imagen} className='imagenes'></img>
         </div>
       </>
     )

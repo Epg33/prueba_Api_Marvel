@@ -13,7 +13,7 @@ function Series(props) {
           <p className='description'><h2>Characters: </h2>{character}</p>
           <p className='description'>Comics: {comics}</p>
         </div>
-        <img src={imagen} alt="imagen de muestra del persoaje" className='character'></img>
+        <img src={imagen} alt="imagen de muestra del persoaje" className='imagenes'></img>
       </div>
     </div>)
   }
