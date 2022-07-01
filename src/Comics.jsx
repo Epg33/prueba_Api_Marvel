@@ -28,8 +28,7 @@ function Comics(props) {
 
     await fetch(`http://gateway.marvel.com/v1/public/comics?limit=100&titleStartsWith=${title}&ts=1&apikey=8647391dcd64fb37aed65587c692cb85&hash=059c9891e0d7109faefe1dc8bfd6d1ff`)
     .then(response=>response.json())
-    .then(data_f=>{data = data_f; console.log(data_f);
-      console.log(data);})
+    .then(data_f=>{data = data_f;})
     titlex = data.data.results[0].title
     imagen = data.data.results[0].thumbnail.path+'/detail.'+data.data.results[0].thumbnail.extension
     precio = data.data.results[0].prices[0].price

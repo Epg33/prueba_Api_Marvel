@@ -24,7 +24,7 @@ function App() {
   return (
     <div className='hola'>
       <div className='lainfo'>
-          <h1 className='Titulo'>The <i>Marvel</i>ious info</h1>
+            <h1 className='Titulo'>The <i>Marvel</i>ious info</h1>
           <nav className='nave'>
             <button className='botonx' onClick={Ver} value='Personajes'>Personajes</button>
             <button className='botonx' onClick={Ver} value='Comics'>Comics</button>
